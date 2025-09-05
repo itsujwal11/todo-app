@@ -1,0 +1,35 @@
+body{
+    font-family: Arial,sans-serif;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 0 12px;
+}
+#taskInput{
+    padding: 8px;
+    width: 70%;
+}
+#addBtn{
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;;
+}
+
+li{
+    margin: 6px 0;
+    list-style: none;
+} 
+li > button{
+    margin-left: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.done{
+
+    text-decoration: line-through;
+    color: gray;
+}
