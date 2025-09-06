@@ -1,35 +1,100 @@
-body{
-    font-family: Arial,sans-serif;
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 0 12px;
-}
-#taskInput{
-    padding: 8px;
-    width: 70%;
-}
-#addBtn{
-    padding: 8px 12px;
-    margin-left: 5px;
-    cursor: pointer;;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f3f4f6;
+  font-family: Arial, sans-serif;
+  padding: 24px;
 }
 
-li{
-    margin: 6px 0;
-    list-style: none;
-} 
-li > button{
-    margin-left: 10px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
+.app {
+  width: min(640px, 92vw);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  padding: 20px;
 }
 
-.done{
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-    text-decoration: line-through;
-    color: gray;
+#taskInput {
+  flex: 1;
+  padding: 8px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary { background: #2563eb; color: #fff; }
+.btn.ghost   { background: #555;   color: #fff; width: 100%; margin-top: 10px; }
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.right, .left h3 {
+  margin: 4px 0 8px;
+  font-size: 16px;
+}
+
+.right {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fafafa;
+}
+
+#taskList, #doneList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#taskList li, #doneList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+#taskList li > span,
+#doneList li > span {
+  flex: 1;
+}
+
+.actions { display: flex; gap: 8px; }
+
+li.done span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.actions .doneBtn { background: green; color: #fff; }
+.actions .edit    { background: orange; color: #111; }
+.actions .delete  { background: red;    color: #fff; }
+
+#emptyState, #emptyDone {
+  color: #666;
+  font-size: 14px;
+  margin: 6px 0 0;
 }

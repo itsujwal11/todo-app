@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-    <input type="text" placeholder="Enter a task" id="taskInput">
+  <div class="app">
+    <h2>To-Do App</h2>
 
-    <button id="addBtn">Add</button>
+    <div class="input-row">
+      <input type="text" placeholder="Enter a task" id="taskInput" />
+      <button id="addBtn" class="btn primary">Add</button>
+    </div>
 
-    <ul id="taskList">
-        
-    </ul>
-    <script src="app.js"></script>
+    <p id="taskCounter">Total: 0 | Done: 0 | Left: 0</p>
+
+    <div class="columns">
+      <!-- LEFT = Active -->
+      <div class="left">
+        <h3>Active</h3>
+        <ul id="taskList"></ul>
+        <p id="emptyState">No active tasks</p>
+        <button id="clearAll" class="btn ghost">Clear All</button>
+      </div>
+      <div class="right">
+        <h3>Completed</h3>
+        <ul id="doneList"></ul>
+        <p id="emptyDone">No completed tasks yet</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
